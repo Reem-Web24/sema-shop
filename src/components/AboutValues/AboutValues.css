@@ -1,0 +1,114 @@
+/* تنسيق سكشن الميزات بالكامل */
+.about-values-section {
+  padding: 30px 8%;
+  background-color: #f8f5f0; /* 🌟 لون الخلفية النود الفخم المعتمد من طرفك 🌟 */
+  text-align: center;
+  font-family: "Instrument Serif", serif; /* توحيد الخط الفخم */
+  margin-bottom: 150px;
+}
+
+/* العنوان الرئيسي للفقرة */
+.values-main-title {
+  font-size: 2.9rem;
+  color: #1a160e;
+  font-weight: 400;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+  font-family: "Instrument Serif", serif;
+}
+
+/* 🌟 شبكة توزيع ثلاثية الأعمدة محددة بدقة لتناسب الأحجام الصغيرة 🌟 */
+.values-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة فقط */
+  gap: 50px; /* مسافة متزنة تعطي متنفساً ممتازاً للكروت عند التكبير */
+  max-width: 1100px; /* تقليص عرض الحاوية لتبقى الكروت صغيرة ورشيقة */
+  margin: 0 auto;
+}
+
+/* الكارت المفرد (العمود) والتحضير للأنميشن والـ Hover */
+.value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+
+  /* مساحة داخلية راهية تعطي فخامة وتبعد الحواف عن النصوص */
+  padding: 45px 30px;
+
+  /* الحواف الدائرية الفخمة المنتظرة */
+  border-radius: 35px;
+
+  /* إطار شفاف مبدئي لمنع أي اهتزاز بصري */
+  border: 1.5px solid transparent;
+
+  /* الخصائص المبدئية المختفية قبل أن تفعلها الجافا سكريبت بنعومة */
+  opacity: 0;
+  transform: translateY(30px);
+
+  /* مرونة انتقالية فائقة النعومة لكل الحركات */
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s ease,
+    background-color 0.4s ease;
+
+  will-change: opacity, transform, border-color;
+}
+
+/* الكلاس الفعال الذي يتم إضافته بواسطة الـ JS لتفعيل الظهور التدريجي */
+.value-card.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌟 تأثير الـ Hover: التكبير الناعم المدروس مع ظهور الإطار الأسود والـ Radius 🌟 */
+.value-card.fade-in-active:hover {
+  transform: scale(1.04); /* تكبير أنيق يحافظ على رشاقة الأبعاد */
+  border-color: rgba(0, 0, 0, 0.75); /* إطار أسود نحيف ومحدد بدقة */
+  background-color: #f8f5f0; /* خلفية بيضاء تبرز انحناء الكارت وسط الخلفية البيج */
+}
+
+/* شكل النجمة التزيينية في الأعلى */
+.value-icon {
+  font-size: 1.5rem;
+  color: #4a5333; /* لون زيتي ملكي ناعم للنجمة */
+  margin-bottom: 0px;
+}
+
+/* عناوين الكروت الفرعية */
+.value-card-title {
+  font-size: 2rem;
+  color: #48433a;
+  font-weight: 400;
+  margin-bottom: 14px;
+  font-family: "Instrument Serif", serif;
+}
+
+/* نصوص الفقرات بحجم صغير وفخم */
+.value-card-text {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #70685b;
+  font-weight: 400;
+  max-width: 280px; /* الحفاظ على رشاقة وعرض الكارت الصغير */
+  font-family: "Instrument Serif", serif;
+}
+
+/* التجاوب التام مع الشاشات الصغيرة والجوالات */
+@media (max-width: 992px) {
+  .values-grid-container {
+    grid-template-columns: 1fr; /* عمود واحد على الجوال لراحة القراءة */
+    gap: 40px;
+  }
+
+  .values-main-title {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+  }
+
+  .value-card {
+    padding: 35px 25px;
+  }
+}

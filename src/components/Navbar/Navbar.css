@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  background: transparent;
+  padding: 30px 0;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 1px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* هيدر مخفي بنعومة فقط عند فتح المنيو لتجنب تداخل الأيقونات */
+.nav-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+  direction: ltr; /* الترتيب العالمي: المنيو يسار، اللوجو سنتر، الأيقونات يمين */
+}
+
+.nav-right-side {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.5rem;
+  color: white;
+  text-transform: lowercase;
+}
+
+.navbar.scrolled .menu-toggle-btn {
+  color: #3c4a25;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+}
+
+.nav-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-logo a {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .nav-logo a {
+  color: #3c4a25;
+}
+
+.nav-left-icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-icon-link {
+  color: white;
+  transition: color 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar.scrolled .nav-icon-link {
+  color: #3c4a25;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: white;
+  color: #3c4a25;
+  font-size: 0.65rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar.scrolled .cart-badge {
+  background: #3c4a25;
+  color: white;
+}
+
+/* ─── تصميم الـ Side Drawer الفخم ─── */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -380px; /* مخفي تماماً خارج الشاشة يساراً */
+  width: 350px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 3000;
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.05);
+  transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 40px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-drawer.open {
+  left: 0; /* ينزلق للداخل بسلاسة عند الفتح */
+}
+
+/* هيدر المنيو الجانبي بعد التعديل */
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse; /* التكنيك السحري لقلب الأماكن: العنوان يسار والإكس يمين */
+  margin-bottom: 50px;
+  border-bottom: 1px solid #f0ece6;
+  padding-bottom: 20px;
+}
+
+.drawer-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.8rem;
+  color: #8e8574;
+  margin: 0;
+  font-weight: 400;
+}
+
+.close-drawer-btn {
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #d9534f; /* لون الإغلاق الأحمر الهادئ المطابق لصورتك */
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.close-drawer-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* روابط المنيو والأسهم */
+.drawer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer-links li {
+  border-bottom: 1px solid #faf8f5;
+}
+
+.drawer-links li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5px;
+  text-decoration: none;
+  color: #333333;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif; /* خط المنيو النظيف */
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.drawer-links li a:hover {
+  color: #8e8574;
+  padding-left: 10px; /* تمدد بسيط لليسار عند التحويم لجمالية الحركة */
+}
+
+.arrow {
+  color: #ccc;
+  font-size: 0.9rem;
+  font-family: monospace;
+  transition: color 0.3s;
+}
+
+.drawer-links li a:hover .arrow {
+  color: #8e8574;
+}
+
+/* الطبقة الشفافة خلف المنيو */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(3px);
+  z-index: 2500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ريسبرونسيف شاشات الموبايل */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 25px;
+  }
+  .side-drawer {
+    width: 290px;
+  }
+}
+/* 🌟 أنيميشن النبضة الناعمة لعداد السلة 🌟 */
+.cart-badge.bump-animation {
+  animation: badgeBump 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes badgeBump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+    background-color: #2b351a;
+  } /* يغمق اللون قليلاً أثناء الحركة لمظهر تفاعلي فخم */
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,47 @@
+.announcement-bar {
+  background-color: #8e8574; /* نفس درجة اللون الفخم في متجركِ */
+  color: #ffffff;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  overflow: hidden; /* لإخفاء النصوص الخارجة عن حدود الشاشة */
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* ليكون دائماً أعلى عنصر في الموقع */
+}
+
+/* المسار الداخلي الذي يحرك النصوص */
+.announcement-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 50px; /* مسافة مريحة بين الجمل */
+  animation: marquee 25s linear infinite; /* حركة مستمرة ناعمة */
+}
+
+.announcement-track span {
+  display: inline-block;
+}
+
+/* الأنميشن المسؤول عن تحريك الشريط بشكل لامتناهي */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(
+      -33.33%
+    ); /* يتحرك بمقدار تكرار الجمل ليظهر كأنه شريط واحد ممتد */
+  }
+}
+
+/* ريسبونسيف خفيف للجوال */
+@media (max-width: 768px) {
+  .announcement-bar {
+    font-size: 0.95rem;
+    padding: 8px 0;
+  }
+}

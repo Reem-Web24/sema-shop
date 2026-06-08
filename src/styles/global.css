@@ -1,0 +1,137 @@
+:root {
+  --white: #ffffff;
+  --black: #1a1a1a;
+  --olive: #3d441e;
+  --gray: #f8f5f2;
+  --serif: "Cormorant Garamond", serif;
+  --sans: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+/* Toast message */
+.toast-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  font-family: sans-serif;
+}
+
+.toast-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Main Footer */
+.main-footer {
+  background: var(--olive);
+  color: white;
+  padding-top: 100px;
+  text-align: center;
+}
+.footer-newsletter h2 {
+  font-family: var(--serif);
+  font-size: 3rem;
+  margin-bottom: -10px;
+}
+.footer-newsletter p {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  color: #b2aeae;
+}
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+.footer-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #b2aeae;
+  margin-bottom: 30px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  margin-top: 30px;
+}
+.instagram-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  line-height: 0;
+  margin-bottom: 30px;
+}
+.marquee-track {
+  display: flex;
+  width: calc(200px * 18);
+  animation: infiniteScroll 25s linear infinite;
+}
+.marquee-track img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-200px * 3));
+  }
+}
+.copyright {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #aaa;
+  padding: 15px 0;
+  background: #faf9f7;
+  letter-spacing: 1px;
+}

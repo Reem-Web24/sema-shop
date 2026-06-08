@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+/* حاوية سكشن الفيديو الشاملة ممتدة بكامل العرض والارتفاع الفخم */
+.about-video-section {
+  position: relative;
+  width: 100%;
+  height: 75vh; /* ارتفاع سينمائي مناسب جداً للشاشات الكبيرة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Instrument Serif", serif;
+  margin-bottom: 50px;
+}
+
+/* تثبيت حاوية الفيديو في الخلفية تماماً */
+.video-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* جعل الفيديو يملأ الحاوية بالكامل بدون أي تصغير */
+.bg-brand-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* طبقة التظليل الناعمة لضمان وضوح نصوصكِ */
+.video-overlay-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* تظليل كلاسيكي فخم */
+}
+
+/* حاوية النصوص المتمركزة في السنتر فوق الفيديو */
+.video-text-content-block {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 0 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* العنوان الفرعي الإيطاليك */
+.video-section-sub-title {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.6rem;
+  font-style: italic;
+  display: block;
+  margin-bottom: 16px;
+  opacity: 0.95;
+  letter-spacing: 0.5px;
+}
+
+/* العنوان الرئيسي الكبير الفخم الخاص بكِ */
+.video-section-main-title {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+/* الفقرة النصية التابعة له */
+.video-section-paragraph {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* 🌟 الستايل الأصلي للزر الفخم 🌟 */
+.video-section-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 12px 45px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.video-section-btn:hover {
+  background: white;
+  color: #000000;
+}
+
+/* التجاوب مع الجوالات */
+@media (max-width: 768px) {
+  .about-video-section {
+    height: 60vh;
+  }
+
+  .video-section-main-title {
+    font-size: 2.8rem;
+  }
+
+  .video-section-paragraph {
+    font-size: 1.4rem;
+  }
+}

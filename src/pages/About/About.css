@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+/* ==========================================================================
+   🔒 حماية الصفحة من التسريب الجانبي وإلغاء الفراغ الأبيض تماماً
+   ========================================================================== */
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-page {
+  background-color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- About Hero الواجهة الفخمة المحدثة --- */
+.about-hero {
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.about-hero-overlay {
+  background: rgba(0, 0, 0, 0.35);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+/* 🌟 حاوية النصوص الموجهة لليسار 🌟 */
+.hero-content-left {
+  text-align: left;
+  max-width: 650px;
+}
+
+.about-hero h1 {
+  font-family: "Instrument Serif", serif;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 25px;
+}
+
+.about-hero p {
+  font-family: "Instrument Serif", serif;
+  color: #f3f0df;
+  font-size: 2rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* --- 🌟 أنميشن ظهور الأقسام عند النزول (Reveal Animation) 🌟 --- */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-immediate {
+  animation: fadeInScale 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* --- 🌟 تكبير حجم سكشن الفيديو بالطول وإلغاء الفراغات (الشاشات الكبيرة) 🌟 --- */
+.extended-video-wrapper {
+  background-color: #fff !important; /* إجبار الخلفية على اللون الأبيض لمنع الرمادي */
+  line-height: 0; /* تصفير الارتفاع السطري لمنع المتصفح من ترك فراغ سفلي */
+  font-size: 0;
+}
+
+.extended-video-wrapper .video-section-container {
+  height: 75vh !important;
+  min-height: 500px;
+  background: #fff !important;
+  overflow: hidden;
+}
+
+.extended-video-wrapper iframe,
+.extended-video-wrapper video {
+  width: 100% !important;
+  height: 75vh !important;
+  min-height: 500px;
+  display: block; /* يلغي الفراغ السفلي الافتراضي تماماً */
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* --- 🌟 ستايل الأزرار العائمة (Scroll Top & WhatsApp) 🌟 --- */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #3d441e;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #272c13;
+  transform: translateY(-4px);
+}
+
+.scroll-to-top-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.whatsapp-float-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-float-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- التحديث النهائي الشامل لإنهاء الفراغ الرمادي تماماً على الجوال --- */
+@media (max-width: 768px) {
+  /* 1. تصفير الحاوية الكبرى وإلغاء أي قيم ارتفاع موروثة */
+  .extended-video-wrapper {
+    height: auto !important;
+    background-color: #fff !important; /* لضمان بياض الخلفية التام */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 2. إجبار حاوية الفيديو على أخذ ارتفاع مناسب دون أي زيادة أو نقصان */
+  .extended-video-wrapper .video-section-container {
+    height: 40vh !important; /* تحديد ارتفاع ثابت ومريح جداً لشاشات الجوال */
+    min-height: unset !important; /* تدمير أي حد أدنى قديم يسبب الفراغ */
+    max-height: 320px !important;
+    background: #fff !important;
+    position: relative;
+    overflow: hidden;
+    margin: 0 !important;
+  }
+
+  /* 3. إجبار الفيديو أو الـ iframe على ملء الحاوية الـ 40vh بالكامل دون ترك بكسل واحد رمادي */
+  .extended-video-wrapper iframe,
+  .extended-video-wrapper video {
+    width: 100% !important;
+    height: 100% !important; /* يملأ الـ 40vh كاملة */
+    min-height: unset !important;
+    display: block !important;
+    object-fit: cover !important; /* خاصية سحرية تقص أطراف الفيديو لتملأ الشاشة بالفيديو فقط وتلغي الخلفية الرمادية */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+}

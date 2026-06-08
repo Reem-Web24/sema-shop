@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+.brands-section {
+  padding: 80px 0 100px 0;
+  background-color: #fff;
+  direction: ltr; /* البداية من اليسار بشكل طبيعي وثابت */
+}
+
+/* حاوية مرنة تجمع العنوان والزر على سطر واحد */
+.brands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 0 8%; /* متناسق مع بداية ونهاية الكروت وشريط التمرير */
+}
+
+/* عنوان الماركات الفخم */
+.brands-main-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 3rem;
+  color: #8e8574;
+  font-weight: 400;
+  margin-bottom: 0; /* ألغينا المارجن القديم لأن الحاوية تجمعهم */
+  letter-spacing: 0.5px;
+}
+
+/* زر View All الفاخر والمطابق تماماً للتصميم */
+.brands-view-all-btn {
+  font-family: sans-serif; /* خط ناعم ونظيف للزر */
+  font-size: 0.95rem;
+  color: #011a12; /* نفس لون نصوص الأزرار الداكنة الراستك */
+  background-color: #f4f2ee; /* لون الخلفية الفاتحة والناعمة المقوسة */
+  padding: 8px 24px;
+  border-radius: 50px; /* ليعطي نفس الشكل البيضاوي الدائري تماماً */
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.brands-view-all-btn:hover {
+  background-color: #eadecc; /* تأثير ناعم عند تمرير الماوس */
+  transform: translateY(-1px);
+}
+
+/* التوافق مع الموبايل */
+@media (max-width: 768px) {
+  .brands-header {
+    padding: 0 5%;
+    margin-bottom: 30px;
+  }
+  .brands-main-title {
+    font-size: 2.3rem;
+  }
+  .brands-view-all-btn {
+    padding: 6px 18px;
+    font-size: 0.85rem;
+  }
+}
+/* حاوية التمرير للماركات */
+.brands-container {
+  display: flex;
+  gap: 40px;
+  padding: 10px 8% 35px 8%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  user-select: none;
+  cursor: grab;
+}
+
+.brands-container:active {
+  cursor: grabbing;
+}
+
+/* تصميم شريط التمرير النحيف جداً ذو اللون الزيتي الفاخر */
+.brands-container::-webkit-scrollbar {
+  height: 2px; /* خيط نحيف ممتد */
+  display: block;
+}
+
+.brands-container::-webkit-scrollbar-track {
+  background: rgba(142, 133, 116, 0.1); /* تتبع خفيف باهت جداً خلف الخط */
+  margin-left: 8%; /* يبدأ بمحاذاة الكارت الأول يساراً */
+  margin-right: 8%;
+}
+
+.brands-container::-webkit-scrollbar-thumb {
+  background: #4a5333; /* اللون الزيتي الفاخر المأخوذ من الصورة تماماً ليعطي الطابع المستدام والراقي */
+  border-radius: 2px;
+}
+
+/* تصميم كروت الماركات المستطيلة الفخمة */
+.brand-item {
+  flex: 0 0 auto;
+}
+
+.brand-card {
+  width: 280px;
+  height: 160px;
+  background-color: #f1eae1; /* الخلفية الكريمية الفاخرة والدافئة المأخوذة من لوجو ليفو وهانوفرين */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.brand-card img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain; /* يضمن بقاء اللوجو بأبعاده الأصلية النظيفة وبدون قص */
+  pointer-events: none;
+}
+
+/* حركة أنيقة عند تمرير الماوس فوق كارت الماركة */
+.brand-card:hover {
+  transform: scale(1.02);
+}
+
+/* متوافق مع الموبايل */
+@media (max-width: 768px) {
+  .brands-main-title {
+    font-size: 2.5rem;
+    padding-left: 5%;
+  }
+  .brands-container {
+    padding-left: 5%;
+    gap: 20px;
+  }
+  .brand-card {
+    width: 220px;
+    height: 130px;
+  }
+}

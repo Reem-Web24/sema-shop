@@ -1,0 +1,207 @@
+/* ==========================================================================
+   🌿 تنسيقات صفحة الحساب الشخصي (SEMA Boutique)
+   ========================================================================== */
+.account-page {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 180px 8% 120px; /* نفس الـ padding الدقيق لصفحة السلة لمنع الاختفاء تحت النافبار */
+  box-sizing: border-box;
+  flex: 1;
+}
+
+/* الهيدر الترحيبي */
+.account-welcome-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.account-welcome-header h1 {
+  font-family: "Instrument Serif", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 10px 0;
+}
+
+.account-welcome-header p {
+  font-size: 1rem;
+  color: #8e8574;
+  margin: 0;
+}
+
+/* تقسيم الصفحة هندسياً */
+.account-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* 💳 كرت تفاصيل الحساب الجانبي */
+.account-sidebar-info .info-card {
+  background: #fdfaf6; /* البيج العاجي الناعم */
+  border-radius: 8px;
+  padding: 35px 25px;
+  border: 1px solid #f1eae1;
+}
+
+.info-card h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid #eadecc;
+  padding-bottom: 10px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #8e8574;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #2c2a27;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+/* زر تسجيل الخروج النظيف */
+.account-logout-btn {
+  width: 100%;
+  background: transparent;
+  color: #c94b4b; /* لون هادئ مائل للاحمرار الفاخر للخروج */
+  border: 1px solid #e8c5c5;
+  padding: 14px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.account-logout-btn:hover {
+  background: #fff5f5;
+  border-color: #c94b4b;
+}
+
+/* 📦 قسم جدول الطلبات السابقة */
+.account-orders-section h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 30px 0;
+}
+
+.orders-table-wrapper {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.orders-table th {
+  background: #fcfbf9;
+  padding: 18px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3c4a25; /* اللون الزيتي الفخم */
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table td {
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table tr:last-child td {
+  border-bottom: none;
+}
+
+.order-id-cell {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.order-items-cell {
+  color: #706a60;
+  font-style: italic;
+}
+
+.order-total-cell {
+  font-weight: 600;
+  color: #2c2a27;
+}
+
+/* شارات حالة الطلب (Badges) */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.delivered {
+  background: #eef7ed;
+  color: #2e7d32; /* أخضر ناعم للطلبات المستلمة */
+}
+
+.status-badge.processing {
+  background: #fff8ec;
+  color: #b78103; /* ذهبي دافئ للطلبات قيد التنفيذ */
+}
+
+.no-orders-box {
+  border: 1px dashed #eadecc;
+  padding: 60px;
+  text-align: center;
+  border-radius: 8px;
+  color: #8e8574;
+}
+
+/* ==========================================================================
+   📱 تصميم متجاوب لشاشات الجوال والتابلت
+   ========================================================================== */
+@media (max-width: 992px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .account-container {
+    padding: 160px 5% 80px;
+  }
+  .account-welcome-header h1 {
+    font-size: 2.4rem;
+  }
+  .orders-table-wrapper {
+    overflow-x: auto; /* يسمح بسحب الجدول يميناً ويساراً في الجوال الصغير دون تشويه */
+  }
+}

@@ -1,0 +1,147 @@
+/* الحاوية الرئيسية للتنبيه الجانبي */
+.cart-toast-notification {
+  position: fixed;
+  top: 100px; /* تظهر في الأعلى يميناً تحت مستوى النافبار الفخم */
+  right: 30px;
+  width: 350px;
+  background-color: #fcfbf9; /* اللون البيج العاجي الدافئ لمتجركِ */
+  border: 1px solid #eadecc; /* تحديد ناعم متناسق */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(60, 74, 37, 0.08); /* ظل ناعم وخفيف جداً */
+  padding: 18px;
+  z-index: 9999; /* لكي يظهر فوق كل العناصر والمكونات */
+
+  /* أنيميشن الدخول الناعم */
+  animation: toastSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* الهيدر الخاص بالتنبيه */
+.toast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f3ece3;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.toast-success-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3c4a25; /* لون متجرك الزيتي الفخم */
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #8e8574;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.toast-close-btn:hover {
+  color: #3c4a25;
+}
+
+/* جسم التنبيه وعرض المنتج */
+.toast-body {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.toast-product-img-wrapper {
+  width: 65px;
+  height: 65px;
+  background-color: #fff;
+  border: 1px solid #f3ece3;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.toast-product-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.toast-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toast-product-name {
+  font-family: "Instrument Serif", serif; /* خط متجركِ الأساسي للفخامة */
+  font-size: 1.15rem;
+  color: #2c251e;
+  margin: 0;
+}
+
+.toast-product-price {
+  color: #8e8574;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* الأزرار بالأسفل */
+.toast-footer {
+  display: flex;
+  gap: 10px;
+}
+
+.toast-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+/* زر عرض السلة - هادئ وعاجي */
+.view-bag-btn {
+  background-color: #f3ece3;
+  color: #3c4a25;
+  border: 1px solid #eadecc;
+}
+.view-bag-btn:hover {
+  background-color: #eadecc;
+}
+
+/* زر إتمام الطلب السريع - زيتي فخم */
+.checkout-btn {
+  background-color: #3c4a25;
+  color: #fff;
+}
+.checkout-btn:hover {
+  background-color: #2b351a;
+}
+
+.toast-btn:active {
+  transform: scale(0.98);
+}

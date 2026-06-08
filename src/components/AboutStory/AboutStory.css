@@ -1,0 +1,127 @@
+/* حاوية الكومبوننت بالكامل */
+.about-story-section {
+  padding: 120px 8%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* لمنع ظهور أي Scrollbar عرضي أثناء حركة النقاط */
+}
+
+.story-component-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+/* الحاوية التي تدمج الصورة مع النقاط الخلفية */
+.story-image-wrapper {
+  position: relative;
+  padding: 30px; /* مساحة لبروز النقاط من الأطراف */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* تأثير شبكة النقاط الفخم خلف زاوية الصورة */
+.parallax-dots {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  bottom: 5px;
+  right: 5px;
+  z-index: 1;
+
+  /* رسم النقاط برمجياً بحجم 2.5px متباعدة بـ 20px */
+  background-image: radial-gradient(#8e8574 2.5px, transparent 2.5px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+/* الصورة ذات الأطراف المنحنية المتفاعلة مع الماوس */
+.tilt-image {
+  width: 100%;
+  max-width: 460px;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 60px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 2; /* لتكون الصورة فوق النقاط دائماً */
+
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* تنسيق النصوص والمحاذاة الشاملة لتوحيد الخط */
+.story-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  /* 🌟 تطبيق خط الفخامة على كامل البلوك 🌟 */
+  font-family: "Instrument Serif", serif;
+}
+
+.story-sub-header {
+  font-size: 1.5rem; /* تكبير خفيف ليتناسب مع طبيعة الخط السيرف */
+  color: #8e8574;
+  font-style: italic;
+  margin-bottom: -40px;
+}
+
+.story-main-title {
+  font-size: 3.2rem; /* حجم فخم وجذاب للعنوان الرئيسي */
+  color: #4a5333;
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.story-paragraph {
+  font-size: 1.6rem; /* تكبير النص البرمجي لأن خطوط السيرف تظهر أصغر بصرياً */
+  line-height: 1.2;
+  color: #52525b; /* تعميق لون الرمادي قليلاً لتسهيل القراءة بهذا الخط النحيف */
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.story-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ريسبونسيف كامل متجاوب مع الجوال والأيباد */
+@media (max-width: 992px) {
+  .story-component-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .story-text-block {
+    text-align: center;
+    align-items: center;
+  }
+  .tilt-image {
+    height: 360px;
+    max-width: 360px;
+    border-radius: 40px;
+  }
+  .parallax-dots {
+    width: 140px;
+    height: 140px;
+    bottom: 15px;
+    right: 15px;
+  }
+  .story-main-title {
+    font-size: 3.2rem;
+  }
+  .story-paragraph {
+    font-size: 1.4rem;
+  }
+}

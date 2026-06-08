@@ -1,0 +1,147 @@
+/* ==========================================================================
+   🌿 تنسيقات صفحة نجاح الطلب (SEMA Boutique)
+   ========================================================================== */
+.order-success-page {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.success-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 200px 6% 120px; /* يعطي مساحة مريحة تحت النافبار */
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الكرت الأبيض الأساسي */
+.success-card {
+  background: #fdfaf6; /* العاجي الناعم الخاص بالبراند */
+  border: 1px solid #f1eae1;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(60, 74, 37, 0.02); /* لمسة ظل زيتية خفيفة جداً */
+}
+
+/* دائرة الأيقونة الفخمة */
+.success-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background-color: #fffdfa;
+  border: 1px solid #eadecc;
+  border-radius: 50%;
+  color: #3c4a25; /* اللون الزيتي الملكي */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  animation: scaleUpIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 15px 0;
+}
+
+.success-subtitle {
+  font-size: 1.05rem;
+  color: #706a60;
+  line-height: 1.6;
+  margin: 0 0 35px 0;
+}
+
+/* صندوق تفاصيل رقم الطلب */
+.order-info-box {
+  background: #ffffff;
+  border: 1px solid #f1eae1;
+  border-radius: 6px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  color: #8e8574;
+}
+
+.info-value {
+  color: #2c2a27;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.success-email-notice {
+  font-size: 0.85rem;
+  color: #a0988a;
+  margin: 0 0 40px 0;
+  font-style: italic;
+}
+
+/* زر العودة الفخم */
+.continue-shopping-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  height: 52px;
+  padding: 0 40px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.continue-shopping-btn:hover {
+  background-color: #3c4a25; /* يتحول للزيتي الفاخر عند التمرير */
+  letter-spacing: 2px;
+}
+
+/* أنيميشن خفيف لظهور الأيقونة بنعومة */
+@keyframes scaleUpIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   📱 ريسبونسيف الجوال
+   ========================================================================== */
+@media (max-width: 576px) {
+  .success-card {
+    padding: 40px 20px;
+  }
+  .success-title {
+    font-size: 2rem;
+  }
+  .success-container {
+    padding: 160px 5% 80px;
+  }
+}

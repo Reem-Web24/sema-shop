@@ -1,0 +1,159 @@
+.auth-page-wrapper {
+  background-color: #fcfbf9; /* البيج العاجي الدافئ */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.auth-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  padding: 50px 40px;
+  border-radius: 8px;
+  border: 1px solid #eadecc;
+  box-shadow: 0 10px 35px rgba(60, 74, 37, 0.03); /* ظل خفيف جداً زيتوني */
+  text-align: center;
+  box-sizing: border-box;
+  position: relative; /* لتحديد موقع زر الهوم بدقة داخل الكارد */
+}
+
+/* تنسيق زر البيت في أعلى اليمين */
+.auth-home-back-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #8e8574; /* لون برونزي/بيج هادئ متناسق مع الفوتر */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.auth-home-back-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.auth-home-back-btn:hover {
+  color: #3c4a25; /* اللون الزيتي المعتمد عند التمرير */
+  transform: translateY(-2px); /* رفعة خفيفة فخمة */
+}
+
+.auth-brand-logo {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.8rem;
+  color: #3c4a25; /* اللون الزيتي المعتمد */
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+}
+
+.auth-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #2c251e;
+  margin: 0 0 8px 0;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: #8e8574;
+  margin: 0 0 35px 0;
+  line-height: 1.5;
+}
+
+/* التنسيقات الداخلية للفورم */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left; /* الحقول بالإنجليزي تترتب لليصار */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #2c251e;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 14px;
+  font-size: 0.95rem;
+  border: 1px solid #eadecc;
+  border-radius: 4px;
+  background-color: #fdfaf6;
+  color: #2c251e;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #3c4a25; /* يتحول للزيتي عند الضغط */
+  background-color: #fff;
+}
+
+.forgot-password-link {
+  text-align: right;
+}
+
+.forgot-password-link span {
+  font-size: 0.8rem;
+  color: #8e8574;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.forgot-password-link span:hover {
+  color: #3c4a25;
+}
+
+.auth-submit-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 16px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.auth-submit-btn:hover {
+  background-color: #3c4a25;
+  letter-spacing: 2.5px;
+}
+
+.auth-toggle-footer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #8e8574;
+  border-top: 1px solid #f3ece3;
+  padding-top: 20px;
+}
+
+.toggle-auth-state-btn {
+  background: none;
+  border: none;
+  color: #3c4a25;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 0.9rem;
+}

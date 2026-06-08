@@ -1,0 +1,389 @@
+/* ==========================================================================
+   🌿 التنسيقات العامة لصفحة السلة (SEMA Shop)
+   ========================================================================== */
+.cart-page {
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================================================
+   🌟 ضبط طبقات ومواقع شريط الإعلانات والنافبار لمنع الاختفاء والتداخل
+   ========================================================================== */
+
+/* 1. تثبيت شريط الإعلانات في القمة تماماً فوق كل شيء */
+.announcement-bar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  width: 100%;
+  z-index: 10000 !important; /* طبقة علوية قصوى لضمان ظهوره */
+  height: 40px; /* تحديد ارتفاع ثابت دقيق للشريط */
+  display: flex;
+  align-items: center;
+}
+
+/* 2. تحويل النافبار ليكون مثبت ويبدأ مباشرة من تحت شريط الإعلانات */
+.static-navbar .navbar {
+  position: fixed !important;
+  top: 40px !important; /* 🌟 ندفعه لأسفل بمقدار ارتفاع شريط الإعلانات (40px) */
+  left: 0 !important;
+  width: 100% !important;
+  background: #fff !important;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
+  z-index: 9999 !important; /* طبقة تحت شريط الإعلانات وفوق محتوى الصفحة */
+}
+
+/* تحويل نصوص المنيو، اللوجو، والأيقونات للون الزيتي الفخم فوراً داخل صفحة السلة */
+.static-navbar .navbar .menu-toggle-btn,
+.static-navbar .navbar .nav-logo a,
+.static-navbar .navbar .nav-icon-link {
+  color: #3c4a25 !important;
+}
+
+/* تعديل ألوان الشارة (البادج) لتبدو واضحة في صفحة السلة */
+.static-navbar .navbar .cart-badge {
+  background: #3c4a25 !important;
+  color: #fff !important;
+}
+
+/* 3. زيادة الـ padding العلوي للمحتوى لكي يظهر واضحاً تحت الشريطين الثابتين */
+.cart-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 180px 8% 120px; /* 🌟 مساحة علوية 180px تضمن ظهور العنوان والمنتجات بوضوح تام */
+  box-sizing: border-box;
+  flex: 1;
+}
+
+/* ==========================================================================
+   📦 تنسيقات هيكل محتويات السلة والمنتجات
+   ========================================================================== */
+.cart-main-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #2c2a27;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cart-content-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: start;
+}
+
+.cart-items-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+  gap: 30px;
+  transition: all 0.4s ease; /* متوافق مع أنيميشن الحذف الناعم */
+}
+
+.cart-item-image-wrapper {
+  width: 110px;
+  height: 110px;
+  background-color: #fcfbf9;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f3ece3;
+}
+
+.cart-item-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 6px 0;
+}
+
+.cart-item-price {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.15rem;
+  color: #8e8574;
+  margin: 0;
+}
+
+/* ➕➖ عناصر التحكم في الكمية */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #2c2a27;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: #fcfbf9;
+}
+
+.qty-btn:active {
+  background-color: #f1eae1;
+  transform: scale(0.95);
+}
+
+.qty-number {
+  padding: 0 14px;
+  font-size: 1rem;
+  color: #2c2a27;
+  font-family: inherit;
+}
+
+.cart-item-total-price {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c2a27;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* 🗑️ زر حذف المنتج الزيتي التفاعلي */
+.remove-item-btn {
+  background: #3c4a25; /* لون متجركِ الزيتي المعتمد */
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.remove-item-btn:hover {
+  background: #2b351a;
+}
+
+/* ==========================================================================
+   💳 بوكس ملخص الطلب الجانبي (Summary Card)
+   ========================================================================== */
+.cart-summary-card {
+  background: #fdfaf6;
+  border-radius: 8px;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.summary-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 30px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.summary-label {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.summary-value {
+  color: #2c2a27;
+  font-size: 1.05rem;
+}
+
+.shipping-note {
+  font-style: italic;
+  color: #8e8574;
+  font-size: 0.9rem;
+}
+
+.border-bottom-soft {
+  border-bottom: 1px solid #f1eae1;
+  padding-bottom: 25px;
+  margin-bottom: 15px;
+}
+
+.total-row {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.total-label {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2c2a27;
+}
+
+.total-value {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #2c2a27;
+}
+
+/* 🛍️ زر إتمام الدفع الآمن والحركة التباعدية الفخمة */
+.secure-checkout-btn {
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 16px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 15px;
+}
+
+.secure-checkout-btn:hover {
+  background: #3c4a25; /* يتحول للون متجركِ الزيتي الفخم عند التمرير */
+  letter-spacing: 2px; /* حركة تباعد أحرف أنيقة ومودرن */
+}
+
+.vat-notice {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #a0988a;
+  margin: 0;
+}
+
+/* ==========================================================================
+   🛒 رسالة السلة الفارغة
+   ========================================================================== */
+.empty-cart-message {
+  text-align: center;
+  padding: 80px 0;
+  font-size: 1.2rem;
+  color: #8e8574;
+}
+
+.continue-shopping-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #3c4a25;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   ✨ أنيميشن الاختفاء والتقلص الناعم عند حذف منتج
+   ========================================================================== */
+.cart-item-row.item-fade-out {
+  animation: itemSlideUp 0.4s ease forwards;
+  pointer-events: none; /* يمنع الضغط المزدوج أثناء الحركة */
+}
+
+@keyframes itemSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    max-height: 200px;
+    padding: 25px 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-30px); /* انسحاب ناعم لجهة اليسار */
+    max-height: 200px;
+    padding: 25px 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+    max-height: 0; /* يتقلص الارتفاع تماماً لتتحرك بقية المنتجات بسلاسة للأعلى */
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+}
+
+/* ==========================================================================
+   📱 شاشات الجوال والتابلت (Responsive Design)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .cart-content-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cart-container {
+    padding: 160px 5% 80px; /* مواءمة المساحة العلوية للستيل جوال */
+  }
+  .cart-main-title {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-item-row {
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+    padding-bottom: 30px;
+  }
+  .cart-item-image-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  .cart-item-details {
+    min-width: 140px;
+  }
+  .quantity-control {
+    order: 3;
+  }
+  .cart-item-total-price {
+    order: 4;
+    flex: 1;
+    text-align: right;
+  }
+  .remove-item-btn {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+}

@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+.categories-section {
+  padding: 80px 0 40px 0;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 80px;
+  margin-top: 60px;
+}
+
+/* العنوان المشترك للبراند والكاتيقوري لتوحيد المقاس */
+.categories-main-title {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 3rem !important; /* المقاس المصغر الأنيق */
+  color: #8e8574 !important;
+  font-weight: 400;
+  margin-bottom: 40px;
+  padding-left: 8%;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.categories-container-fixed {
+  display: flex !important;
+  gap: 50px !important;
+  padding: 10px 8% 25px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  user-select: none !important;
+  cursor: grab !important;
+  direction: ltr !important;
+}
+
+.categories-container-fixed:active {
+  cursor: grabbing !important;
+}
+
+.categories-container-fixed::-webkit-scrollbar {
+  height: 2px !important;
+  display: block !important;
+}
+
+.categories-container-fixed::-webkit-scrollbar-track {
+  background: rgba(142, 133, 116, 0.1) !important;
+  margin-left: 8% !important;
+  margin-right: 8% !important;
+  border-radius: 2px !important;
+}
+
+.categories-container-fixed::-webkit-scrollbar-thumb {
+  background: #4a5333 !important; /* الزيتي الفخم */
+  border-radius: 2px !important;
+}
+
+/* العناصر (الدوائر) */
+.category-item-fixed {
+  flex: 0 0 135px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.category-circle-fixed {
+  width: 135px !important;
+  height: 135px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: #fdfbf9 !important;
+  margin-bottom: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1px solid rgba(142, 133, 116, 0.08) !important;
+}
+
+.category-circle-fixed img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+/* نصوص الأقسام تحت الدوائر */
+.category-name-fixed {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.3rem !important;
+  color: #8e8574 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  letter-spacing: 0.3px !important;
+}
+
+.category-item-fixed:hover .category-circle-fixed {
+  transform: scale(1.03) !important;
+}
+/* ==========================================================================
+   🌟 أنيميشن الظهور المتتابع الفخم (Staggered Fade-in Up)
+   ========================================================================== */
+
+/* أنيميشن العنوان الأساسي للقسم */
+.reveal-title {
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: elegantFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+/* الكرت الأساسي للدائرة: يبدأ مخفي ومزاح للأسفل قليلاً */
+.category-item-fixed.animated-card {
+  opacity: 0;
+  transform: translateY(30px);
+  /* نستخدم الـ --index لحساب وقت التأخير (Delay) تلقائياً لكل دائرة بفارق 0.08 ثانية */
+  animation: elegantSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(0.15s + var(--index) * 0.08s);
+  will-change: transform, opacity;
+}
+
+/* كود تغيير شكل المؤشر عند السحب الفعلي */
+.categories-container-fixed.active-drag {
+  cursor: grabbing !important;
+}
+
+/* كود حركات الأنيميشن Keyframes */
+@keyframes elegantSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes elegantFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ريسبونسيف ناعم للجوال للتأكد من سلاسة الحركة */
+@media (max-width: 768px) {
+  .categories-section {
+    padding: 40px 0 20px 0 !important;
+    margin-bottom: 40px !important;
+  }
+  .categories-main-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+  }
+  .categories-container-fixed {
+    gap: 25px !important; /* تقريب الدوائر قليلاً في الجوال لشكل أرتب */
+  }
+}
+/* ==========================================================================
+   🌟 أنيميشن متتابع: ظهور العنوان أولاً ثم الدوائر بالترتيب
+   ========================================================================== */
+
+/* 1. تأثير العنوان: يظهر فوراً بنعومة أول ما نوصل للقسم بالسكرول */
+.categories-main-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.categories-section.reveal.active .categories-main-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. تأثير الدوائر: تبدأ مخفية ونازلة تحت */
+.category-item-fixed.animated-card {
+  opacity: 0;
+  transform: translateY(35px);
+  will-change: transform, opacity;
+}
+
+/* 3. تشغيل أنيميشن الدوائر بعد ظهور العنوان (أضفنا مهلة 0.5 ثانية للانتظار) */
+.categories-section.reveal.active .category-item-fixed.animated-card {
+  animation: elegantSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* 0.5s هي وقت انتظار ظهور العنوان بالكامل، ثم تبدأ أول دائرة */
+  animation-delay: calc(0.5s + var(--index) * 0.08s);
+}
+
+@keyframes elegantSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ريسبونسيف الجوال */
+@media (max-width: 768px) {
+  .categories-section {
+    padding: 40px 0 20px 0 !important;
+    margin-bottom: 40px !important;
+  }
+  .categories-main-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+  }
+  .categories-container-fixed {
+    gap: 25px !important;
+  }
+}

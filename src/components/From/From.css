@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+.target-section {
+  padding: 60px 0 100px 0;
+  background-color: #fff;
+  direction: ltr; /* التصفح والبداية الثابتة من اليسار */
+}
+
+/* عنوان السيكشن */
+.target-main-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 3.5rem;
+  color: #8e8574; /* اللون الموحد للبراند */
+  font-weight: 400;
+  margin-bottom: 50px;
+  padding-left: 8%;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+/* حاوية التمرير المحدثة بكلاس فريد للتحرك فوراً */
+.target-container-fixed {
+  display: flex !important;
+  gap: 50px !important;
+  padding: 10px 8% 35px 8% !important;
+  overflow-x: auto !important; /* تفعيل التمرير الأفقي لإظهار الخط */
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  user-select: none !important;
+  cursor: grab !important;
+}
+
+.target-container-fixed:active {
+  cursor: grabbing !important;
+}
+
+/* ─── شريط التمرير الزيتي النحيف الفخم المتناسق والمتحرك 100% ─── */
+
+/* متصفحات كروم، سفاري، إيدج */
+.target-container-fixed::-webkit-scrollbar {
+  height: 2px !important; /* خيط نحيف ممتد */
+  display: block !important;
+}
+
+.target-container-fixed::-webkit-scrollbar-track {
+  background: rgba(
+    142,
+    133,
+    116,
+    0.1
+  ) !important; /* خط التتبع الباهت الممتد بعرض الحاوية */
+  margin-left: 8% !important; /* يبدأ مع بداية أول كارت يساراً */
+  margin-right: 8% !important;
+  border-radius: 2px !important;
+}
+
+.target-container-fixed::-webkit-scrollbar-thumb {
+  background: #4a5333 !important; /* اللون الزيتي الفاخر */
+  border-radius: 2px !important;
+}
+
+/* متصفح فايرفوكس */
+@supports (-moz-appearance: none) {
+  .target-container-fixed {
+    scrollbar-width: thin !important;
+    scrollbar-color: #4a5333 rgba(142, 133, 116, 0.1) !important;
+  }
+}
+
+/* تصميم كروت الأشخاص المحدثة */
+.target-item-fixed {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 220px !important;
+  text-align: center !important;
+}
+
+/* تصميم القوس الفخم للصور من الأعلى */
+.target-arch-card-fixed {
+  width: 220px !important;
+  height: 260px !important;
+  background-color: #f1eae1 !important; /* الخلفية الكريمية الدافئة خلف الأشخاص */
+  border-top-left-radius: 110px !important;
+  border-top-right-radius: 110px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  margin-bottom: 20px !important;
+  transition: transform 0.4s ease !important;
+}
+
+.target-arch-card-fixed img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+/* أسماء الأشخاص */
+.target-name-fixed {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.6rem !important;
+  color: #8e8574 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  letter-spacing: 0.3px !important;
+}
+
+.target-item-fixed:hover .target-arch-card-fixed {
+  transform: scale(1.03) !important;
+}
+
+/* توافق الشاشات للموبايل */
+@media (max-width: 768px) {
+  .target-main-title {
+    font-size: 2.5rem;
+    padding-left: 5%;
+  }
+  .target-container-fixed {
+    padding-left: 5% !important;
+    gap: 25px !important;
+  }
+  .target-item-fixed {
+    width: 170px !important;
+  }
+  .target-arch-card-fixed {
+    width: 170px !important;
+    height: 210px !important;
+    border-top-left-radius: 85px !important;
+    border-top-right-radius: 85px !important;
+  }
+}

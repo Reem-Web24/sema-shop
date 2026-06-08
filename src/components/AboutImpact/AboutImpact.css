@@ -1,0 +1,87 @@
+/* تنسيق قسم الأرقام بالكامل */
+.about-impact-section {
+  padding: 100px 10%;
+  background-color: #f8f5f0; /* لون الخلفية النود الفخم */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* حاوية التوزيع الثلاثي الرئيسي للموقع */
+.impact-grid-container {
+  display: flex;
+  justify-content: space-around; /* توزيع متساوٍ ومريح للعناصر */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* 🌟 العنصر الفردي: أضفنا الخصائص المبدئية المختفية للأنميشن 🌟 */
+.impact-item-box {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* مسافة ناعمة بين الأيقونة الوردية والنصوص */
+
+  /* تبدأ العناصر شفافة ومزاحة قليلاً للأسفل */
+  opacity: 0;
+  transform: translateY(30px);
+
+  /* منحنى انتقالي فائق النعومة (Cubic-Bezier) ليطابق حركات الموقع الفخمة */
+  transition:
+    opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform, opacity;
+}
+
+/* 🌟 الكلاس الفعّال الذي يتم تفعيله عبر الجافا سكريبت عند السكرول 🌟 */
+.impact-item-box.active-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* حجم وضبط الأيقونات الوردية اللطيفة */
+.impact-pink-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* تجميع الرقم والوصف رأسياً ليظهرا بجانب الأيقونة بانتظام */
+.impact-text-sub-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* تنسيق وحجم الأرقام العدادة الفخمة */
+.impact-number {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.3rem; /* حجم ناعم وغير متضخم يطابق شاشتك */
+  color: #3d441e; /* اللون الزيتي الملكي الداكن */
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* نصوص الأوصاف الفرعية أسفل الأرقام */
+.impact-text {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.3rem;
+  color: #6a6a6a; /* لون رمادي هادئ وأنيق */
+  font-weight: 400;
+  margin: 4px 0 0 0;
+}
+
+/* التجاوب المرن الكامل مع شاشات الجوال */
+@media (max-width: 768px) {
+  .impact-grid-container {
+    flex-direction: column; /* تتحول لعمود رأسي مريح على الجوال */
+    gap: 35px;
+    align-items: flex-start; /* محاذاة لليسار لسهولة القراءة على الشاشات الصغيرة */
+    padding-left: 15%;
+  }
+}

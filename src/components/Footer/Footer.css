@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+/* --- Instagram Marquee (شريط الصور المتحرك الفريد) --- */
+.instagram-marquee-fixed {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  line-height: 0;
+  margin-bottom: 0;
+}
+
+.marquee-track-fixed {
+  display: flex;
+  width: calc(200px * 12);
+  animation: infiniteScrollFixed 20s linear infinite;
+}
+
+.marquee-track-fixed img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes infiniteScrollFixed {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1200px);
+  }
+}
+
+/* --- Main Footer (الفوتر الزيتوني الفخم الموحد الخط) --- */
+.main-footer {
+  background: #4a5333;
+  color: white;
+  padding-top: 100px;
+  text-align: center;
+}
+
+/* العنوان الرئيسي بالخط المائل الفخم */
+.footer-newsletter h2 {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* الفقرة تحت العنوان */
+.footer-newsletter p {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+  color: #e6e4e0; /* تفتيح خفيف للون ليناسب فخامة الخط وسهولة القراءة */
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* أزرار التواصل الاجتماعي */
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.social-links a {
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.4rem; /* تكبير المقاس قليلاً ليناسب طبيعة خط السيريف الناعم */
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  padding: 6px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+/* النص الإيطاليك السفلي */
+.footer-text {
+  text-align: center;
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.4rem;
+  color: #d1ceca;
+  margin-bottom: 40px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+  font-weight: 400;
+}
+
+/* حقوق الحفظ السفلي */
+.copyright {
+  text-align: center;
+  font-family: "Instrument Serif", serif !important;
+  font-size: 1.1rem;
+  color: #8e8574; /* لون البراند الموحد للحقوق خلف الخلفية الفاتحة */
+  padding: 20px 0;
+  background: #faf9f7;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .footer-newsletter h2 {
+    font-size: 2.5rem;
+  }
+  .footer-newsletter p {
+    font-size: 1.3rem;
+  }
+  .social-links {
+    gap: 15px;
+  }
+  .social-links a {
+    padding: 6px 20px;
+    font-size: 1.2rem;
+  }
+  .footer-text {
+    font-size: 1.2rem;
+  }
+}

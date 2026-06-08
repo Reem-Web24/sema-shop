@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+.clients-section {
+  padding: 100px 6%;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: "Instrument Serif", serif;
+  overflow: hidden;
+}
+
+.clients-header {
+  margin-bottom: 60px;
+}
+
+.clients-subtitle {
+  display: block;
+  font-size: 1rem;
+  color: #8e8574;
+  margin-bottom: 15px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.clients-main-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 3rem;
+  color: #303032;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.clients-slider-track {
+  display: flex;
+  /* 🌟 تم تسريع الحركة هنا إلى 0.5s لتكون خفيفة وسريعة 🌟 */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.testimonial-card-wrapper {
+  flex: 0 0 33.333%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.testimonial-box {
+  background-color: #f4f4f5;
+  border-radius: 12px;
+  padding: 35px 30px 25px 30px;
+  min-height: 260px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.quote-mark {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 4rem;
+  color: #e4e4e7;
+  line-height: 1;
+  user-select: none;
+}
+
+.testimonial-text {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #4b5563;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.testimonial-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.testimonial-author {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.2rem;
+  color: #1f2937;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.rating-stars {
+  color: #fbbf24;
+  font-size: 0.95rem;
+  display: flex;
+  gap: 2px;
+}
+
+.user-avatar-placeholder {
+  width: 45px;
+  height: 45px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e4e4e7;
+  padding: 4px;
+}
+
+.user-avatar-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .testimonial-card-wrapper {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+
+  .clients-main-title {
+    font-size: 2.5rem;
+  }
+}

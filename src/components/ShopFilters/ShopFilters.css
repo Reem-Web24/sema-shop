@@ -1,0 +1,144 @@
+.shop-filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 8% 20px 8%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shop-filters-left {
+  display: flex;
+  gap: 30px;
+}
+
+.shop-filters-left button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.4rem;
+  color: #8e8574;
+  padding: 0 0 8px 0;
+  transition: color 0.3s ease;
+}
+
+.shop-filters-left button.active,
+.shop-filters-left button:hover {
+  color: #3d441e;
+}
+
+.shop-filters-right {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.filter-dropdown-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-dropdown-group label {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.3rem;
+  color: #8e8574;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 1px solid #b5ae9f;
+  border-radius: 20px;
+  padding: 6px 35px 6px 18px;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.1rem;
+  color: #8e8574;
+  cursor: pointer;
+  outline: none;
+  min-width: 140px;
+  transition: border-color 0.3s ease;
+}
+
+.select-wrapper select:focus {
+  border-color: #3d441e;
+  color: #3d441e;
+}
+
+/* السهم المخصص المتناسق مع التصميم للكمبيوتر */
+.select-wrapper::after {
+  content: "➔";
+  font-size: 0.7rem;
+  transform: rotate(90deg);
+  position: absolute;
+  right: 15px;
+  top: 35%;
+  color: #8e8574;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.select-wrapper:hover::after {
+  color: #3d441e;
+}
+
+/* إخفاء فلاتر الجوال تماماً في الشاشات الكبيرة */
+.mobile-only-filters-wrapper {
+  display: none;
+}
+
+/* ==========================================
+   📱 التجاوب الذكي مع شاشات الجوال (تطبيق مظهر لقطة الشاشة)
+   ========================================== */
+@media (max-width: 768px) {
+  .shop-filters-container {
+    flex-direction: row; /* الحفاظ على الصف الأفقي لمنع نزول العناصر */
+    justify-content: flex-start; /* ترتيب العناصر بجانب بعضها مباشرة */
+    gap: 25px; /* المسافة بين حقل الـ Category وحقل الـ Sorting كما بالصورة */
+    padding: 20px 6%;
+  }
+
+  /* إخفاء أزرار الكمبيوتر المفرودة */
+  .desktop-only {
+    display: none;
+  }
+
+  /* إظهار قائمة أقسام الجوال */
+  .mobile-only-filters-wrapper {
+    display: block;
+  }
+
+  /* تعديل مقاسات الخطوط والحدود لتطابق الصورة المرفقة بدقة ناعمة */
+  .filter-dropdown-group label {
+    font-size: 1.25rem;
+    color: #8e8574;
+  }
+
+  .select-wrapper select {
+    min-width: 120px;
+    padding: 5px 30px 5px 14px;
+    font-size: 1rem;
+    border: 1px solid rgba(181, 174, 159, 0.6); /* خط رفيع ناعم */
+    border-radius: 12px; /* انحناء مستطيل ناعم يطابق لقطة الشاشة تماماً */
+  }
+
+  /* تغيير شكل وتناسق السهم المفرود في الجوال ليصبح رقيقاً ومناسباً */
+  .select-wrapper::after {
+    content: "∨";
+    font-family: sans-serif;
+    transform: none;
+    font-size: 0.65rem;
+    right: 12px;
+    top: 28%;
+    font-weight: bold;
+    color: #8e8574;
+  }
+}

@@ -1,0 +1,210 @@
+/* 
+.product-details-page {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 180px 6% 120px; 
+  box-sizing: border-box;
+  flex: 1;
+}
+
+
+.breadcrumb-nav {
+  font-size: 0.9rem;
+  color: #8e8574;
+  margin-bottom: 40px;
+}
+
+.breadcrumb-nav a {
+  color: #8e8574;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-nav a:hover {
+  color: #3c4a25; 
+}
+
+.breadcrumb-nav span {
+  padding: 0 10px;
+}
+
+.breadcrumb-nav .current-product {
+  color: #2c2a27;
+  font-weight: 500;
+}
+
+
+.product-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+
+.main-image-wrapper {
+  background-color: #fcfbf9; 
+  border: 1px solid #f3ece3;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1; 
+}
+
+.main-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.main-image-wrapper:hover img {
+  transform: scale(1.04); 
+}
+
+
+.product-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #2c2a27;
+  margin: 0 0 15px 0;
+  line-height: 1.2;
+}
+
+.product-price {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.8rem;
+  color: #3c4a25; 
+  margin: 0 0 30px 0;
+  font-weight: 500;
+}
+
+.product-divider {
+  height: 1px;
+  background-color: #f1eae1;
+  margin: 30px 0;
+}
+
+.product-description {
+  font-size: 1.05rem;
+  color: #555552;
+  line-height: 1.7;
+  margin: 0 0 25px 0;
+}
+
+.product-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-spec-list li {
+  font-size: 0.95rem;
+  color: #706a60;
+}
+
+
+.product-actions-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.detail-quantity-control {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 52px; 
+}
+
+.detail-qty-btn {
+  background: transparent;
+  border: none;
+  width: 45px;
+  height: 100%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #2c2a27;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.detail-qty-btn:hover {
+  background: #fcfbf9;
+}
+
+.detail-qty-number {
+  padding: 0 20px;
+  font-size: 1.05rem;
+  color: #2c2a27;
+  font-weight: 500;
+}
+
+
+.detail-add-to-bag-btn {
+  flex: 1;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  height: 52px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.detail-add-to-bag-btn:hover {
+  background-color: #3c4a25;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 992px) {
+  .product-details-layout {
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+  .product-details-container {
+    padding: 160px 5% 80px;
+  }
+  .product-title {
+    font-size: 2.2rem;
+  }
+  .main-image-wrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-actions-row {
+    flex-direction: column; 
+    align-items: stretch;
+    gap: 15px;
+  }
+  .detail-quantity-control {
+    justify-content: space-between;
+  }
+} */
