@@ -1,4 +1,5 @@
 import "./Home.css";
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import mobileHeroImg from "../../images/herophone.jpg";
 // استدعاء المكونات الفرعية
@@ -87,9 +88,9 @@ export default function Home() {
             Gifts for every moment <br />
             explore now
           </p>
-          <a href="/shop" className="btn-gift-now">
+          <Link to="/shop" className="btn-gift-now">
             Gift Now
-          </a>
+          </Link>
           <button
             className="scroll-top-btn"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
