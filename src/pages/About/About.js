@@ -68,10 +68,10 @@ export default function About() {
       >
         <div className="about-hero-overlay">
           <div className="hero-content-left">
-            <h1 className="reveal-immediate">
+            <h1 className="reveal-immediate mobile-hide">
               A Journey of Passion <br /> Beyond Gifting
             </h1>
-            <p className="reveal-immediate">
+            <p className="reveal-immediate mobile-hide">
               “Gifts are memories and beautiful moments”
             </p>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./VideoSection.css";
+import { Link } from "react-router-dom";
 import brandVideo from "../../images/video.mp4"; // مسار الفيديو الخاص بكِ
 
 export default function VideoSection({
@@ -32,9 +33,9 @@ export default function VideoSection({
 
         {/* ظهور الزر بالاسم الجديد الجاي من الـ Props */}
         {showBtn && (
-          <a href="/products" className="video-section-btn">
+          <Link to="/shop" className="video-section-btn">
             {btnText}
-          </a>
+          </Link>
         )}
       </div>
     </section>

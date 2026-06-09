@@ -239,3 +239,45 @@ body {
     font-size: 1.3rem !important; /* تصغير النص الفرعي (الفقرة) */
   }
 }
+/* 1. إخفاء النصوص في الجوال */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+/* 2. تحسين سكشن الهيرو ليظهر بشكل فخم */
+.about-hero {
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden; /* ضروري للأنميشن */
+}
+
+/* 3. أنميشن "دخول فخم" للصورة عند تحميل الصفحة */
+.about-hero {
+  animation: zoomInImage 10s ease-out forwards;
+}
+
+@keyframes zoomInImage {
+  from {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 4. تعديل ارتفاع الهيرو في الجوال ليكون مناسباً للصورة فقط */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh; /* ارتفاع مناسب للصورة فقط في الجوال */
+  }
+
+  .about-hero-overlay {
+    background: rgba(0, 0, 0, 0.1); /* تظليل أخف لأننا لا نملك نصوصاً */
+  }
+}

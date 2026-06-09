@@ -1,6 +1,6 @@
 import "./BestSellers.css";
 import React, { useEffect, useRef } from "react";
-
+import { Link, useNavigate } from "react-router-dom";
 import flaw2 from "../../images/flaw2.jpg";
 import fla3 from "../../images/flaw3.jpg";
 import fla4 from "../../images/flaw4.jpg";
@@ -9,6 +9,7 @@ import ward from "../../images/ward.jpg";
 import care from "../../images/care.jpg";
 
 export default function BestSellers() {
+  const navigate = useNavigate();
   const scrollRef = useRef(null);
 
   const products = [
@@ -65,7 +66,7 @@ export default function BestSellers() {
   const handleMobileCategoryChange = (e) => {
     const destination = e.target.value;
     if (destination) {
-      window.location.href = destination;
+      navigate(destination); // استخدام navigate بدلاً من window.location.href
     }
   };
 
@@ -80,9 +81,9 @@ export default function BestSellers() {
       <div className="best-sellers-header">
         <h2 className="best-sellers-title">Best Sellers</h2>
 
-        <a href="/shop" className="view-all-button desktop-view-all">
+        <Link to="/shop" className="view-all-button desktop-view-all">
           View All
-        </a>
+        </Link>
 
         <div className="best-sellers-mobile-dropdown">
           <div className="select-wrapper">
