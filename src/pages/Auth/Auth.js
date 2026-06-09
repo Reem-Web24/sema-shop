@@ -95,7 +95,7 @@ export default function Auth() {
 
           {isLogin && (
             <div className="forgot-password-link">
-              <span>Forgot password?</span>
+              {/* <span>Forgot password?</span> */}
             </div>
           )}
 
