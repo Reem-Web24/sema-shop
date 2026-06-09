@@ -219,3 +219,23 @@ body {
     border: none !important;
   }
 }
+/* تصغير النصوص في الـ Hero للموبايل */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 60vh; /* تقليل ارتفاع الهيرو ليناسب شاشة الجوال بشكل أفضل */
+  }
+
+  .about-hero-overlay {
+    padding: 0 5%; /* تقليل الهوامش الجانبية للنص */
+  }
+
+  .about-hero h1 {
+    font-size: 3rem !important; /* تصغير العنوان الرئيسي */
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+
+  .about-hero p {
+    font-size: 1.3rem !important; /* تصغير النص الفرعي (الفقرة) */
+  }
+}

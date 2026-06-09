@@ -100,12 +100,14 @@
    ========================================== */
 @media (max-width: 768px) {
   .shop-filters-container {
-    flex-direction: row; /* الحفاظ على الصف الأفقي لمنع نزول العناصر */
-    justify-content: flex-start; /* ترتيب العناصر بجانب بعضها مباشرة */
-    gap: 25px; /* المسافة بين حقل الـ Category وحقل الـ Sorting كما بالصورة */
-    padding: 20px 6%;
+    display: flex !important;
+    flex-direction: row !important;
+    /* هذا هو التعديل الأساسي لجعلهم في اليسار */
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 15px 4% !important;
+    gap: 15px !important; /* مسافة بين الفلترين */
   }
-
   /* إخفاء أزرار الكمبيوتر المفرودة */
   .desktop-only {
     display: none;
@@ -118,27 +120,25 @@
 
   /* تعديل مقاسات الخطوط والحدود لتطابق الصورة المرفقة بدقة ناعمة */
   .filter-dropdown-group label {
-    font-size: 1.25rem;
-    color: #8e8574;
+    font-size: 0.8rem !important;
+    margin-right: 5px !important;
+    white-space: nowrap !important;
   }
-
   .select-wrapper select {
-    min-width: 120px;
-    padding: 5px 30px 5px 14px;
-    font-size: 1rem;
-    border: 1px solid rgba(181, 174, 159, 0.6); /* خط رفيع ناعم */
-    border-radius: 12px; /* انحناء مستطيل ناعم يطابق لقطة الشاشة تماماً */
+    min-width: 70px !important;
+    padding: 4px 20px 4px 8px !important;
+    font-size: 0.8rem !important;
+    border-radius: 8px !important;
   }
 
-  /* تغيير شكل وتناسق السهم المفرود في الجوال ليصبح رقيقاً ومناسباً */
   .select-wrapper::after {
-    content: "∨";
-    font-family: sans-serif;
-    transform: none;
-    font-size: 0.65rem;
-    right: 12px;
-    top: 28%;
-    font-weight: bold;
-    color: #8e8574;
+    right: 8px !important;
+    font-size: 0.5rem !important;
+  }
+  .products-grid-container {
+    padding-top: 40px !important; /* يمكنكِ زيادة الرقم 40px حسب الرغبة */
+  }
+  .filter-dropdown-group {
+    gap: 4px !important;
   }
 }

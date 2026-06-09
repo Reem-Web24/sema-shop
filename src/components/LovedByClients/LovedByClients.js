@@ -40,7 +40,7 @@ export default function LovedByClients() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => {
-        return (prevIndex + 1) % (testimonialsData.length - 2);
+        return (prevIndex + 1) % testimonialsData.length;
       });
     }, 3000);
 
@@ -57,7 +57,9 @@ export default function LovedByClients() {
       <div className="slider-container">
         <div
           className="clients-slider-track"
-          style={{ transform: `translateX(-${activeIndex * (100 / 3)}%)` }}
+          style={{
+            transform: `translateX(-${activeIndex * (window.innerWidth <= 992 ? 100 : 33.333)}%)`,
+          }}
         >
           {testimonialsData.map((item) => (
             <div key={item.id} className="testimonial-card-wrapper">

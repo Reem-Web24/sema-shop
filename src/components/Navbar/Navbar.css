@@ -271,7 +271,22 @@
     padding: 0 25px;
   }
   .side-drawer {
-    width: 290px;
+    position: fixed !important;
+    top: 0 !important;
+    left: -290px !important; /* أو العرض الذي حددتِه */
+    width: 290px !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    z-index: 9999 !important; /* رفعنا الـ Z-index جداً */
+    margin: 0 !important;
+    padding: 40px 20px !important;
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .side-drawer.open {
+    left: 0 !important; /* الالتصاق التام */
   }
 
   /* إخفاء كلمة menu فقط */
@@ -343,4 +358,20 @@
 /* هذا يخفي الرابط في الشاشات الكبيرة */
 .show-on-mobile {
   display: none;
+}
+@media (max-width: 768px) {
+  /* نمنع أي إزاحة عرضية للصفحة كاملة */
+  body {
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+.drawer-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-direction: row-reverse !important;
+  margin: 0 !important; /* تأكدي أن المارجن صفر */
+  padding: 0 0 20px 0 !important; /* تأكدي أن البادينغ لليسار صفر */
 }

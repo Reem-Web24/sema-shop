@@ -387,3 +387,36 @@
     right: 0;
   }
 }
+/* تنسيق الحاوية الجديدة لتعمل في الكمبيوتر والجوال */
+.cart-item-actions-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* مسافة مريحة في الكمبيوتر */
+}
+
+/* في الجوال فقط: نعدل التوزيع ليصبح مدمجاً */
+@media (max-width: 576px) {
+  .cart-item-row {
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 20px 0 !important;
+  }
+
+  .cart-item-details {
+    width: 100% !important; /* الاسم يأخذ السطر الأول كاملاً */
+    margin-bottom: 5px !important;
+  }
+
+  .cart-item-actions-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* توزيع العناصر بالتساوي */
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .remove-item-btn {
+    position: static !important; /* لضمان بقائه في الصف وعدم طفوه */
+    margin-left: 0 !important;
+  }
+}

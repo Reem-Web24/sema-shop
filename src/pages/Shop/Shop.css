@@ -461,3 +461,10 @@ body {
   text-align: center;
   padding: 60px 0;
 }
+/* تصغير خط العنوان في صفحة المتجر للجوال */
+@media (max-width: 768px) {
+  .shop-hero-content h1 {
+    font-size: 2rem !important; /* قمنا بتصغير الحجم من 3.2rem إلى 2rem ليتناسب مع شاشات الموبايل */
+    line-height: 1.3; /* تحسين المسافة بين السطور ليظهر النص بشكل مرتب */
+  }
+}

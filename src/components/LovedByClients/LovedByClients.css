@@ -140,3 +140,14 @@
     font-size: 2.5rem;
   }
 }
+@media (max-width: 992px) {
+  /* جعل السلايدر يعرض بوكس واحد فقط في الموبايل */
+  .testimonial-card-wrapper {
+    flex: 0 0 100% !important; /* كل بوكس يأخذ كامل العرض */
+    padding: 0 5px; /* مسافة بسيطة جداً للراحة */
+  }
+
+  .slider-container {
+    padding: 0 10px;
+  }
+}

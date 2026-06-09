@@ -1,6 +1,6 @@
 import "./Home.css";
 import React, { useEffect, useState } from "react";
-import mobileHeroImg from "../../images/flaw3.jpg";
+import mobileHeroImg from "../../images/herophone.jpg";
 // استدعاء المكونات الفرعية
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
