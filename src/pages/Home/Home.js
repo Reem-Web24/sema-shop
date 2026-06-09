@@ -1,6 +1,6 @@
 import "./Home.css";
 import React, { useEffect, useState } from "react";
-
+import mobileHeroImg from "../../images/flaw3.jpg";
 // استدعاء المكونات الفرعية
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -76,6 +76,11 @@ export default function Home() {
 
       {/* 1. Hero Section الفخم */}
       <section className="hero-image-new">
+        <img
+          src={mobileHeroImg}
+          alt="Mobile Hero"
+          className="mobile-only-hero"
+        />
         <div className="hero-overlay-new">
           <h1 className="hero-title-main">A Gift They'll Never Forget</h1>
           <p className="hero-subtitle-sub">

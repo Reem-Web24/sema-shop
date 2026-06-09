@@ -65,7 +65,11 @@ export default function Navbar() {
 
           {/* 3. الجانب الأيسر: الأيقونات */}
           <div className="nav-left-icons">
-            <Link to="/login" className="nav-icon-link" aria-label="Account">
+            <Link
+              to="/login"
+              className="nav-icon-link hide-on-mobile"
+              aria-label="Account"
+            >
               <svg
                 width="20"
                 height="20"
@@ -75,7 +79,6 @@ export default function Navbar() {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="user-svg-icon"
               >
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
@@ -128,6 +131,11 @@ export default function Navbar() {
         </div>
 
         <ul className="drawer-links">
+          <li className="show-on-mobile">
+            <Link to="/login" onClick={toggleMenu}>
+              My Account <span className="arrow">&gt;</span>
+            </Link>
+          </li>
           <li>
             <Link to="/about" onClick={toggleMenu}>
               About Us <span className="arrow">&gt;</span>

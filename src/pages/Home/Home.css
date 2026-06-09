@@ -313,90 +313,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-/* Responsive Mobile */
-@media (max-width: 768px) {
-  /* 🌟 التعديل الفخم للهيرو بناءً على لقطة الشاشة 2026-06-07 094631.jpg 🌟 */
-  .hero-image-new {
-    display: flex !important;
-    flex-direction: row !important; /* الحفاظ على الهيكل الأفقي لمنع فصل الصورة */
-    height: 70vh !important; /* طول مناسب جداً لشاشات الجوال */
-    padding: 0 5% !important; /* مسافة أمان من الأطراف */
-    background: url("../../images/HERO.png") no-repeat center center / cover !important; /* دمج الصورة في الخلفية */
-    position: relative;
-    align-items: center;
-    justify-content: flex-start;
+.hero-overlay-new {
+  animation: fadeIn 1.5s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  /* إلغاء الـ Before القديم اللي كان يفصل الصورة بالأعلى */
-  .hero-image-new::before {
-    display: none !important;
-  }
-
-  /* جعل حاوية النص عائمة ومستقرة فوق الجزء الأخضر (اليسار) */
-  .hero-overlay-new {
-    margin: 0 !important;
-    padding: 20px !important;
-    max-width: 60% !important; /* يضمن بقاء النص فوق المساحة الخضراء وعدم تغطية الورد */
-    text-align: left !important;
-    z-index: 5;
-    position: relative;
-  }
-
-  /* تصغير الخطوط لتناسب الشاشة وتطلع ملمومة وأنيقة */
-  .hero-title-main {
-    font-size: 1.8rem !important;
-    color: rgb(246, 238, 238) !important; /* اللون الأبيض الفاخر */
-    margin-top: 0 !important;
-    margin-bottom: 15px !important;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* ظل خفيف لسهولة القراءة فوق الخلفية */
-  }
-
-  .hero-subtitle-sub {
-    font-size: 1rem !important;
-    color: rgb(234, 227, 227) !important; /* الأبيض العاجي */
-    margin-bottom: 25px !important;
-    line-height: 1.4 !important;
-  }
-
-  /* زر الـ Gift Now الأبيض الفخم */
-  .btn-gift-now {
-    color: white !important;
-    border-color: white !important;
-    padding: 8px 25px !important;
-    font-size: 0.95rem !important;
-    display: inline-block !important;
-    background: transparent !important;
-  }
-
-  .btn-gift-now:hover {
-    background: white !important;
-    color: #000 !important;
-  }
-
-  /* -------------------------------------------------- */
-  /* 🟢 باقي الأكواد القديمة حقتكِ مثل ما هي بدون أي تغيير 🟢 */
-  /* -------------------------------------------------- */
-  .product-row,
-  .product-row.reverse {
-    flex-direction: column;
-  }
-  .product-image img {
-    height: 300px;
-  }
-  .founder-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  .founder-image img {
-    height: 400px;
-  }
-  .founder-content h2 {
-    font-size: 2.2rem;
-  }
-  .quote {
-    font-size: 1.3rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -562,5 +489,114 @@ html {
     height: 48px;
     bottom: 20px;
     left: 20px;
+  }
+}
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  /* 1. ضبط حاوية الهيرو لترتيب العناصر عمودياً */
+  .mobile-only-hero {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .hero-image-new {
+    height: auto !important;
+    background: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  /* 2. جعل صورة الهيرو تظهر أولاً كعنصر مستقل */
+  .hero-image-mobile-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-image-mobile-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* 3. تنسيق النص ليظهر بعد الصورة مباشرة وبتوسيط */
+  .hero-overlay-new {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 30px 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title-main {
+    font-size: 2.3rem !important;
+    color: #3d441e !important;
+  }
+
+  .hero-subtitle-sub {
+    font-size: 1.9rem !important;
+    color: #73775f !important;
+    margin-top: 1px;
+  }
+
+  .btn-gift-now {
+    color: #3d441e !important;
+    border: 1px solid #3d441e !important;
+  }
+}
+@media (max-width: 768px) {
+  .nav-logo {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .menu-text {
+    display: none !important;
+  }
+}
+.mobile-only-hero {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  .mobile-only-hero {
+    display: block !important;
+    width: 100%;
+    height: auto;
+  }
+}
+/* هذا الجزء مسؤول عن قلب ترتيب عناصر "Our Story" في الموبايل */
+@media (max-width: 768px) {
+  .founder-container {
+    flex-direction: column !important; /* تحويل الترتيب لعمودي */
+    gap: 30px !important; /* تقليل المسافة بين الصورة والنص في الموبايل */
+    text-align: center; /* توسيط النص */
+  }
+
+  .founder-image {
+    width: 100%;
+    order: -1; /* ضمان أن الصورة تأتي أولاً (فوق) */
+  }
+
+  .founder-image img {
+    height: 400px; /* يمكنك تقليل الارتفاع في الموبايل ليكون أجمل */
+    width: 100%;
+  }
+
+  .founder-content {
+    width: 100%;
+  }
+
+  /* تنسيق النصوص في الموبايل لتكون متناسقة */
+  .founder-content h2 {
+    font-size: 2rem !important;
+    margin-bottom: 15px;
+  }
+
+  .quote {
+    font-size: 1.3rem !important;
+    margin-bottom: 20px;
   }
 }

@@ -135,3 +135,22 @@
     height: 130px;
   }
 }
+@media (max-width: 768px) {
+  /* إخفاء زر View All في الجوال */
+  .brands-view-all-btn {
+    display: none !important;
+  }
+
+  /* جعل العنوان يأخذ عرض الشاشة بالكامل بما أن الزر اختفى */
+}
+.brands-container {
+  /* ... الكود القديم كما هو ... */
+  scrollbar-width: thin; /* لمتصفحات فايرفوكس */
+  -ms-overflow-style: auto; /* لمتصفحات إنترنت إكسبلورر */
+}
+
+/* إجبار الشريط على الظهور دائماً في كروم/إيدج */
+.brands-container::-webkit-scrollbar {
+  display: block !important;
+  height: 4px !important; /* اجعليه 4px بدلاً من 2px ليكون أوضح */
+}

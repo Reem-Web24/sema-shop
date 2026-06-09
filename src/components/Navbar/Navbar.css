@@ -56,16 +56,19 @@
 }
 
 .hamburger-icon {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-between;
+  width: 20px;
+  height: 14px; /* ارتفاع كافٍ للخطوط الثلاثة */
 }
 
 .hamburger-icon span {
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: currentColor;
+  display: block !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: currentColor !important;
+  border-radius: 2px;
 }
 
 .nav-logo {
@@ -244,14 +247,7 @@
 }
 
 /* ريسبرونسيف شاشات الموبايل */
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 0 25px;
-  }
-  .side-drawer {
-    width: 290px;
-  }
-}
+
 /* 🌟 أنيميشن النبضة الناعمة لعداد السلة 🌟 */
 .cart-badge.bump-animation {
   animation: badgeBump 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -268,4 +264,83 @@
   100% {
     transform: scale(1);
   }
+}
+/* ريسبرونسيف شاشات الموبايل - كود واحد موحد */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 25px;
+  }
+  .side-drawer {
+    width: 290px;
+  }
+
+  /* إخفاء كلمة menu فقط */
+  .menu-toggle-btn > span:not(.hamburger-icon span) {
+    display: none !important;
+  }
+
+  /* ضمان ظهور أيقونة الخطوط الثلاثة */
+  .hamburger-icon {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 20px !important;
+    height: 14px !important; /* ارتفاع الخطوط */
+    gap: 0 !important; /* إزالة المسافة العشوائية */
+  }
+
+  .hamburger-icon span {
+    display: block !important;
+    width: 20px !important;
+    height: 2px !important;
+    background-color: white !important; /* اللون الأبيض */
+    border-radius: 2px !important;
+  }
+}
+@media (max-width: 768px) {
+  /* 1. تغيير لون أيقونة الخطوط الثلاثة عند التمرير (Scrolled) */
+  .navbar.scrolled .hamburger-icon span {
+    background-color: #3c4a25 !important;
+  }
+
+  /* 2. تصغير حجم كلمة SEMA في الموبايل */
+  .nav-logo a {
+    font-size: 1.8rem !important; /* قمت بتصغير الحجم من 2.5rem إلى 1.8rem */
+    letter-spacing: 1px !important;
+  }
+}
+/* التحكم في ظهور الأيقونات بناءً على الشاشة */
+@media (max-width: 768px) {
+  /* إخفاء أيقونة الحساب من النافبار في الموبايل */
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  /* إظهار رابط الحساب داخل المنيو الجانبي في الموبايل */
+}
+
+/* في الشاشات الكبيرة (أكبر من 768px) نخفي الرابط المضاف للمنيو */
+
+/* تنسيق إضافي لضمان أن المنيو يبدو مرتباً */
+@media (max-width: 768px) {
+  /* جعل اللوجو أصغر قليلاً في الموبايل */
+  .nav-logo a {
+    font-size: 1.8rem !important;
+  }
+
+  /* جعل أيقونة المنيو (الخطوط) داكنة عند التمرير في الموبايل */
+  .navbar.scrolled .hamburger-icon span {
+    background-color: #3c4a25 !important;
+  }
+}
+@media (max-width: 768px) {
+  .show-on-mobile {
+    display: block !important;
+    border-bottom: 1px solid #faf8f5; /* نفس حدود الروابط الأخرى */
+  }
+}
+
+/* هذا يخفي الرابط في الشاشات الكبيرة */
+.show-on-mobile {
+  display: none;
 }
